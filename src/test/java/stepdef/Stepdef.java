@@ -2282,21 +2282,24 @@ public class Stepdef {
        //-------------------------------SHORTLIST---------------
 		@Then("^Shortlist the selected Application$")
 		public void shortlist_the_selected_Application() throws Throwable,InterruptedException {
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//button[text()='Shortlist']")).click();  
+			 WebElement element=driver.findElement(By.xpath("//button[text()='Shortlist']"));
+	 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	 			JavascriptExecutor js = (JavascriptExecutor) driver;
+	 			js.executeScript("arguments[0].click();",element);  
 		}
 
 		@Then("^add additional email recipients$")
 		public void add_additional_email_recipients() throws Throwable {
-			Thread.sleep(2000);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@id='emailshare']")).sendKeys("paulindia637@gmail.com");  
 		}
 
 		@Then("^click on Submit button to send email to candidate$")
 		public void click_on_Submit_button_to_send_email_to_candidate() throws Throwable {
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("(//button[text()='Submit'])[1]")).click(); 
+			 WebElement element=driver.findElement(By.xpath("(//button[text()='Submit'])[1]"));
+	 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	 			JavascriptExecutor js = (JavascriptExecutor) driver;
+	 			js.executeScript("arguments[0].click();",element); 
 		}
 		//----------------------------TALENT POOL
 
