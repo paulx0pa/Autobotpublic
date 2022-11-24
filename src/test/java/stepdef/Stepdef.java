@@ -1210,9 +1210,14 @@ public class Stepdef {
 		
 		@Then("^Recruiter clicks on source menu$")
 		public void recruiter_clicks_on_source_menu() throws Throwable {
-			 WebDriverWait wait=new WebDriverWait(driver,5);
-	 		    WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[@class='bx--header__menu-item'])[3]"))); 
-	 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+// 		Thread.sleep(5000);
+		WebElement element=driver.findElement(By.xpath("(//a[@class='bx--header__menu-item'])[3]"));
+		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", element);
+// 			 WebDriverWait wait=new WebDriverWait(driver,5);
+// 	 		    WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[@class='bx--header__menu-item'])[3]"))); 
+// 	 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 //			driver.findElement(By.xpath("(//a[@class='bx--header__menu-item'])[3]")).click();
 		}
 
