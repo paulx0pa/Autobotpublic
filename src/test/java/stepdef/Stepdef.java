@@ -3273,25 +3273,30 @@ public class Stepdef {
 			js.executeScript("arguments[0].click();", element);
 //  			driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[2]")).click();
 		 Thread.sleep(3000);
-	  			 WebDriverWait wait2 = new WebDriverWait(driver,5);
-		  			WebElement element2=wait2.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='addselected']")));
-		  			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element2);
+		 driver.findElement(By.xpath("//button[@id='addselected']")).click();
+// 	  			 WebDriverWait wait2 = new WebDriverWait(driver,5);
+// 		  			WebElement element2=wait2.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='addselected']")));
+// 		  			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element2);
 		  			Thread.sleep(3000);
  	    	 driver.findElement(By.xpath("//input[@id='numanswer']")).sendKeys("0");
- 	    	 WebDriverWait wait = new WebDriverWait(driver,5);
-	  			WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='basic-info-submit-btn']"))); 
-	  			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element1);
-// 	    	 driver.findElement(By.xpath("(//button[text()='Submit'])[1]")).click();  
+//  	    	 WebDriverWait wait = new WebDriverWait(driver,5);
+// 	  			WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[text()='Submit'])[1]"))); 
+// 	  			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element1);
+	    	 driver.findElement(By.xpath("//button[@id='basic-info-submit-btn']")).click();  
          }
        
          @Then("^recruiter can edit collaborators$")
          public void recruiter_can_edit_collaborators() throws Throwable ,InterruptedException{
 //        		Thread.sleep(2000);
-        	 WebDriverWait wait = new WebDriverWait(driver,60);
-	  			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@id='add-collab-btn'])[1]"))); 
-	  			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-//        	 Thread.sleep(2000);
-////	  			WebElement collab= driver.findElement(By.xpath("//button[@id='add-collab-btn']"));
+        	 WebDriverWait wait = new WebDriverWait(driver,20);
+// 	  			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@id='add-collab-btn'])[1]"))); 
+// 	  			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+		   Thread.sleep(3000);
+		 	WebElement element=driver.findElement(By.xpath("//button[@id='add-collab-btn']"));
+		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", element);
+// 	  			WebElement collab= driver.findElement(By.xpath("//button[@id='add-collab-btn']"));
 //	  			collab.click();
 	  			Thread.sleep(2000);
 			  Select collabrole=new Select(driver.findElement(By.xpath("//select[@name='selectedRoleId']"))); 
@@ -3299,13 +3304,13 @@ public class Stepdef {
 		    	 collabrole.selectByVisibleText("Team Member");
 		    	 Thread.sleep(2000);
 		    	 driver.findElement(By.xpath("(//input[@type='text'])[1]")).click();
-//		    	 Thread.sleep(2000);
+		    	 Thread.sleep(2000);
 		    	 driver.findElement(By.xpath("//div[text()='Sai  Charan (saicharan@trainingqa.com)']")).click();
-//		    	 Thread.sleep(2000);
+		    	 Thread.sleep(2000);
 		    	 driver.findElement(By.xpath("//button[text()='Add']")).click();
 //		    	 PRE SCREENING Q
 //		    	 driver.findElement(By.xpath("//label[@for='showPreScreeningQuest']")).click();(need to comment this line if questions already exists)
-		    	 JavascriptExecutor js=(JavascriptExecutor)driver;
+// 		    	 JavascriptExecutor js=(JavascriptExecutor)driver;
 		    	 js.executeScript("window.scrollBy(0,700)");
 	        	 driver.findElement(By.xpath("//label[@for='toggleChatBotDisplay']")).click();
 		  			WebElement knk = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@for='disableKnockout']"))); 
