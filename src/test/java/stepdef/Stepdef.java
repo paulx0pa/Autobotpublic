@@ -406,12 +406,10 @@ public class Stepdef {
 
 		@When("^recruiter clicks on Additional Information$")
 		public void recruiter_clicks_on_Additional_Information() throws Throwable {
-			Thread.sleep(4000);
-				WebElement element=driver.findElement(By.xpath("//button[text()='Additional Information']"));
+	         	WebElement element=driver.findElement(By.xpath("//button[@id='next-filter-btn']"));
 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click();",element);
-			Thread.sleep(2000);
+			js.executeScript("arguments[0].click();", element);
 		}
 
 		@When("^recruiter add Work Location \"([^\"]*)\"$")
