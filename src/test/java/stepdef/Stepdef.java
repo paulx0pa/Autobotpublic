@@ -3323,9 +3323,9 @@ public class Stepdef {
    				    act.moveToElement(ints);
    				    act.click(ints).perform();
 		        Thread.sleep(4000);
-// 		        js.executeScript("window.scrollBy(0,100)");
-// 		        Thread.sleep(2000);
-//      	         	WebElement n=driver.findElement(By.xpath("//label[@for='directInviteSent']"));
+		        js.executeScript("window.scrollBy(0,300)");
+		        Thread.sleep(4000);
+     	         	driver.findElement(By.xpath("//label[@for='directInviteSent']")).click();
 //      	         	 act.moveToElement(ints);
 //     				    act.click(n).perform();
 // 		    Thread.sleep(3000);
