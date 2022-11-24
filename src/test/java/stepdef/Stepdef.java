@@ -2529,7 +2529,8 @@ public class Stepdef {
 //        	 Thread.sleep(2000);
         	 driver.findElement(By.xpath("(//span[@class='bx--radio-button__appearance'])[3]")).click();
 //        	 Thread.sleep(2000);
-        	 driver.findElement(By.xpath("(//button[text()='Submit'])[1]")).click();   
+        	 driver.findElement(By.xpath("(//button[text()='Submit'])[1]")).click();  
+		 Thread.sleep(3000);
          }
          @Then("^recruiter chooses job status close from batch actions dd$")
          public void recruiter_chooses_job_status_close_from_batch_actions_dd() throws Throwable {
@@ -2546,8 +2547,9 @@ public class Stepdef {
          }
          @Then("^recruiter chooses job status open from batch actions dd$")
          public void recruiter_chooses_job_status_from_batch_actions_dd() throws Throwable ,InterruptedException{
+		 Thread.sleep(3000);
         	 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        	 Thread.sleep(3000);
+       	        Thread.sleep(3000);
         	 Select emailtemp=new Select(driver.findElement(By.xpath("//select[@id='batch-actions']"))); 
 //        	 Thread.sleep(2000);
         	 emailtemp.selectByVisibleText("Job Status");
