@@ -3262,25 +3262,28 @@ public class Stepdef {
          
          @When("^recruiter edits prescreening questions$")
          public void recruiter_edits_prescreening_questions() throws Throwable,InterruptedException {
-		 Thread.sleep(2000);
-        	WebElement a= driver.findElement(By.xpath("//button[@id='jc-sel-ques-btn']"));
+		  WebElement a= driver.findElement(By.xpath("//button[@id='jc-sel-ques-btn']"));
+		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		  Thread.sleep(2000);
+		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         	a.click();
 		  Thread.sleep(2000);
+		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         	WebElement b= driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[2]"));
 		  Thread.sleep(2000);
+		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         	b.click();
 		  Thread.sleep(2000);
+		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         	WebElement c= driver.findElement(By.xpath("//button[@id='addselected']"));
-		  Thread.sleep(2000);
         	c.click();
 		  Thread.sleep(2000);
+		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         	WebElement d= driver.findElement(By.xpath("//input[@id='numanswer']"));
-		  Thread.sleep(2000);
         	d.sendKeys("0");
-		  Thread.sleep(2000);
+		 Thread.sleep(2000);
+		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); 
         	WebElement e= driver.findElement(By.xpath("//button[@id='basic-info-submit-btn']"));
-		  Thread.sleep(2000);
         	e.click();
          }
        
