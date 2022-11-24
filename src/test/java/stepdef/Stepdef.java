@@ -2265,11 +2265,11 @@ public class Stepdef {
          public void recruiter_adds_tag_to_list_of_applications_and_submit() throws Throwable,InterruptedException {
 //    	driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[1]")).click();
 //   		Thread.sleep(2000);
-		 Thread.sleep(2000);
+		 Thread.sleep(3000);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		    Thread.sleep(3000);
         driver.findElement(By.xpath("//button[text()='Tag']")).click();
-//        Thread.sleep(2000);
+       Thread.sleep(2000);
         WebElement tag=driver.findElement(By.xpath("(//input[@type='text'])[1]"));
 	   tag.sendKeys("hire 1");
 	   tag.sendKeys(Keys.ARROW_DOWN);
