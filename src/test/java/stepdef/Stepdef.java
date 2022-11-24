@@ -2140,7 +2140,12 @@ public class Stepdef {
      JavascriptExecutor jq=(JavascriptExecutor)driver;
  	jq.executeScript("window.scrollBy(0,400)");
  	 Thread.sleep(4000);
- 	driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[1]")).click();
+				WebElement elementa=driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[1]"));
+		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+// 			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", elementa);
+			Thread.sleep(2000);
+//  	driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[1]")).click();
 //		 WebDriverWait wait=new WebDriverWait(driver,60);
 //		    WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//label[@class='bx--checkbox-label'])[1]"))); 
 //			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
