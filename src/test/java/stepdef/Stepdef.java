@@ -3262,21 +3262,31 @@ public class Stepdef {
          
          @When("^recruiter edits prescreening questions$")
          public void recruiter_edits_prescreening_questions() throws Throwable,InterruptedException {
-             	 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		 Thread.sleep(2000);
         	WebElement a= driver.findElement(By.xpath("//button[@id='jc-sel-ques-btn']"));
+		  Thread.sleep(2000);
         	a.click();
+		  Thread.sleep(2000);
         	WebElement b= driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[2]"));
+		  Thread.sleep(2000);
         	b.click();
+		  Thread.sleep(2000);
         	WebElement c= driver.findElement(By.xpath("//button[@id='addselected']"));
+		  Thread.sleep(2000);
         	c.click();
+		  Thread.sleep(2000);
         	WebElement d= driver.findElement(By.xpath("//input[@id='numanswer']"));
+		  Thread.sleep(2000);
         	d.sendKeys("0");
+		  Thread.sleep(2000);
         	WebElement e= driver.findElement(By.xpath("//button[@id='basic-info-submit-btn']"));
+		  Thread.sleep(2000);
         	e.click();
          }
        
          @Then("^recruiter can edit collaborators$")
          public void recruiter_can_edit_collaborators() throws Throwable ,InterruptedException{
+            Thread.sleep(2000);
            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
          	WebElement a= driver.findElement(By.xpath("(//button[@id='add-collab-btn'])[1]"));
          	a.click();
