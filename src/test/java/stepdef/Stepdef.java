@@ -2263,20 +2263,19 @@ public class Stepdef {
 
          @When("^recruiter adds tag to list of applications and submit$")
          public void recruiter_adds_tag_to_list_of_applications_and_submit() throws Throwable,InterruptedException {
-//    	driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[1]")).click();
-//   		Thread.sleep(2000);
-		 Thread.sleep(3000);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		    Thread.sleep(3000);
-        driver.findElement(By.xpath("//button[text()='Tag']")).click();
-       Thread.sleep(2000);
+            	 WebElement element=driver.findElement(By.xpath("//button[text()='Tag']"));
+ 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+ 			JavascriptExecutor js = (JavascriptExecutor) driver;
+ 			js.executeScript("arguments[0].click();",element); 
         WebElement tag=driver.findElement(By.xpath("(//input[@type='text'])[1]"));
 	   tag.sendKeys("hire 1");
+	   Thread.sleep(2000);
 	   tag.sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		tag.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[text()='Submit'])[1]")).click();
+		WebElement sbmt=driver.findElement(By.xpath("(//button[text()='Submit'])[1]"));
+		js.executeScript("arguments[0].click();",sbmt);
 			
 			
          }
