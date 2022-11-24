@@ -405,9 +405,8 @@ public class Stepdef {
 
 		@When("^recruiter clicks on Additional Information$")
 		public void recruiter_clicks_on_Additional_Information() throws Throwable {
-			WebDriverWait wait = new WebDriverWait(driver, 60);
-  			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Additional Information']")));
-  			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[text()='Additional Information']")).click();
 		}
 
 		@When("^recruiter add Work Location \"([^\"]*)\"$")
