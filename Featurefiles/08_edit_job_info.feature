@@ -69,7 +69,7 @@ And recruiter edits Job Requirements "<job requirements>"
 When clicks on skills and education section
 When recruiter edits industry field "<industry>"
 And recruiter edits add keywords for AI to vote CV "<keyword>"
-And recruiter edits Education "<education>"
+#And recruiter edits Education "<education>"
 When recruiter clicks on Additional Information
 When recruiter edits Work Location "<worklocation>"
 And recruiter can edit working Hours "<working hrs>"
