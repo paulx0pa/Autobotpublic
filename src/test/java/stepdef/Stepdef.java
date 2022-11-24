@@ -3312,8 +3312,16 @@ public class Stepdef {
     	         	WebElement l=driver.findElement(By.xpath("//button[text()='Submit']"));
     	         	js.executeScript("arguments[0].click();",l);
     	         	js.executeScript("window.scrollBy(0,300)");
-    	         	Thread.sleep(3000);
+    	         
+    			
+         }
+
+         @Then("^edit prescreening settings$")
+         public void edit_prescreening_settings() throws Throwable {
+		 	Thread.sleep(3000);
     	        	WebElement ints=driver.findElement(By.xpath("//div[@id='InterviewStage']"));
+		        JavascriptExecutor js = (JavascriptExecutor) driver;
+		        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     	        	 Actions act=new Actions(driver);
    				    act.moveToElement(ints);
    				    act.click(ints).perform();
@@ -3334,14 +3342,7 @@ public class Stepdef {
  				    Thread.sleep(2000);
     	        	WebElement enddate=driver.findElement(By.xpath("//li[text()='08:15']"));
     	        	js.executeScript("arguments[0].click();",enddate);
-    			
-         }
-
-         @Then("^edit prescreening settings$")
-         public void edit_prescreening_settings() throws Throwable {
         	WebElement schedule=driver.findElement(By.xpath("(//button[text()='Schedule Interview'])[1]"));
-		 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		  JavascriptExecutor js = (JavascriptExecutor) driver;
     	      js.executeScript("arguments[0].click();",schedule);
          }
 
