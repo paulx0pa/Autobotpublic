@@ -251,9 +251,13 @@ public class Stepdef {
 		}
 		@When("^click on view job button$")
 		public void click_on_view_job_button() throws Throwable,InterruptedException{
-			WebDriverWait wait = new WebDriverWait(driver,20);
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='View job']"))); 
-			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+				WebElement element=driver.findElement(By.xpath("//button[text()='View job']"));
+		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", element);
+// 			WebDriverWait wait = new WebDriverWait(driver,20);
+// 			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='View job']"))); 
+// 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 		}
 
 		@Then("^copy the job link$")
@@ -3312,16 +3316,8 @@ public class Stepdef {
     	         	WebElement l=driver.findElement(By.xpath("//button[text()='Submit']"));
     	         	js.executeScript("arguments[0].click();",l);
     	         	js.executeScript("window.scrollBy(0,300)");
-    	         
-    			
-         }
-
-         @Then("^edit prescreening settings$")
-         public void edit_prescreening_settings() throws Throwable {
-		 	Thread.sleep(3000);
+		        		 	Thread.sleep(3000);
     	        	WebElement ints=driver.findElement(By.xpath("//div[@id='InterviewStage']"));
-		        JavascriptExecutor js = (JavascriptExecutor) driver;
-		        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     	        	 Actions act=new Actions(driver);
    				    act.moveToElement(ints);
    				    act.click(ints).perform();
@@ -3344,6 +3340,36 @@ public class Stepdef {
     	        	js.executeScript("arguments[0].click();",enddate);
         	WebElement schedule=driver.findElement(By.xpath("(//button[text()='Schedule Interview'])[1]"));
     	      js.executeScript("arguments[0].click();",schedule);
+    	         
+    			
+         }
+
+         @Then("^edit prescreening settings$")
+         public void edit_prescreening_settings() throws Throwable {
+// 		 	Thread.sleep(3000);
+//     	        	WebElement ints=driver.findElement(By.xpath("//div[@id='InterviewStage']"));
+//     	        	 Actions act=new Actions(driver);
+//    				    act.moveToElement(ints);
+//    				    act.click(ints).perform();
+// 		        Thread.sleep(2000);
+// 		        js.executeScript("window.scrollBy(0,100)");
+//      	         	WebElement n=driver.findElement(By.xpath("//label[@for='directInviteSent']"));
+//      	         	 act.moveToElement(ints);
+//     				    act.click(n).perform();
+// 		    Thread.sleep(2000);
+//     	            WebElement o=driver.findElement(By.xpath("(//button[text()='Add slot'])[1]"));
+//     	            js.executeScript("arguments[0].click();",o);
+//     	            js.executeScript("window.scrollBy(0,100)"); 
+//     	        	WebElement p= driver.findElement(By.xpath("(//input[@placeholder='Select start date and time'])[1]"));
+//     	         	p.sendKeys("18th Dec, 2022 08:00");
+//     	         	WebElement q=driver.findElement(By.xpath("(//input[@type='text'])[4]"));
+//     	         	 act.moveToElement(q);
+//  				    act.click(q).perform();  
+//  				    Thread.sleep(2000);
+//     	        	WebElement enddate=driver.findElement(By.xpath("//li[text()='08:15']"));
+//     	        	js.executeScript("arguments[0].click();",enddate);
+//         	WebElement schedule=driver.findElement(By.xpath("(//button[text()='Schedule Interview'])[1]"));
+//     	      js.executeScript("arguments[0].click();",schedule);
          }
 
          @Then("^edit prescreening shortlist criteria$")
