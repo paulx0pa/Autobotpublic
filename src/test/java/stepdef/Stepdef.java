@@ -3319,9 +3319,12 @@ public class Stepdef {
     	        	 Actions act=new Actions(driver);
    				    act.moveToElement(ints);
    				    act.click(ints).perform();
+		        Thread.sleep(2000);
+		        js.executeScript("window.scrollBy(0,100)");
      	         	WebElement n=driver.findElement(By.xpath("//label[@for='directInviteSent']"));
      	         	 act.moveToElement(ints);
     				    act.click(n).perform();
+		    Thread.sleep(2000);
     	            WebElement o=driver.findElement(By.xpath("(//button[text()='Add slot'])[1]"));
     	            js.executeScript("arguments[0].click();",o);
     	            js.executeScript("window.scrollBy(0,100)"); 
