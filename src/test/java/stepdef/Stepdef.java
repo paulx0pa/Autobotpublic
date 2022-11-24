@@ -3336,13 +3336,15 @@ public class Stepdef {
  				    Thread.sleep(2000);
     	        	WebElement enddate=driver.findElement(By.xpath("//li[text()='08:15']"));
     	        	js.executeScript("arguments[0].click();",enddate);
-    				WebElement schedule=driver.findElement(By.xpath("(//button[text()='Schedule Interview'])[1]"));
-    				js.executeScript("arguments[0].click();",schedule);
+    			
          }
 
          @Then("^edit prescreening settings$")
          public void edit_prescreening_settings() throws Throwable {
-        
+        	WebElement schedule=driver.findElement(By.xpath("(//button[text()='Schedule Interview'])[1]"));
+		 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		  JavascriptExecutor js = (JavascriptExecutor) driver;
+    	      js.executeScript("arguments[0].click();",schedule);
          }
 
          @Then("^edit prescreening shortlist criteria$")
