@@ -409,8 +409,6 @@ public class Stepdef {
 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();",element);
-// 			Thread.sleep(3000);
-// 			driver.findElement(By.xpath("//button[text()='Additional Information']")).click();
 		}
 
 		@When("^recruiter add Work Location \"([^\"]*)\"$")
@@ -3262,16 +3260,18 @@ public class Stepdef {
          
          @When("^recruiter edits prescreening questions$")
          public void recruiter_edits_prescreening_questions() throws Throwable,InterruptedException {
-		  WebElement a= driver.findElement(By.xpath("//button[@id='jc-sel-ques-btn']"));
-        	a.click();
-        	WebElement b= driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[2]"));
-        	b.click();
-        	WebElement c= driver.findElement(By.xpath("//button[@id='addselected']"));
-        	c.click();
-        	WebElement d= driver.findElement(By.xpath("//input[@id='numanswer']"));
-		 d.click();
-        	WebElement e= driver.findElement(By.xpath("//button[@id='basic-info-submit-btn']"));
-        	e.click();
+	  		WebElement element=driver.findElement(By.xpath("//button[@id='jc-sel-ques-btn']"));
+		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();",element);
+			WebElement cbox= driver.findElement(By.xpath("(//label[@class='bx--checkbox-label'])[2]"));
+			js.executeScript("arguments[0].click();",cbox); 
+			WebElement adques= driver.findElement(By.xpath("//button[@id='addselected']"));
+			js.executeScript("arguments[0].click();",adques); 
+			WebElement points= driver.findElement(By.xpath("//input[@id='numanswer']"));
+        	points.sendKeys("0"); 
+        	WebElement sbmt= driver.findElement(By.xpath("//button[@id='basic-info-submit-btn']"));
+        	js.executeScript("arguments[0].click();",sbmt); 
          }
        
          @Then("^recruiter can edit collaborators$")
