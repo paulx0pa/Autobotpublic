@@ -410,7 +410,7 @@ public class Stepdef {
 
 		@When("^recruiter clicks on Additional Information$")
 		public void recruiter_clicks_on_Additional_Information() throws Throwable {
-			Thread.sleep(4000);
+			Thread.sleep(5000);
 	         	driver.findElement(By.xpath("//button[@id='next-filter-btn']")).click();
 // 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 // 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -3323,11 +3323,12 @@ public class Stepdef {
    				    act.moveToElement(ints);
    				    act.click(ints).perform();
 		        Thread.sleep(4000);
-		        js.executeScript("window.scrollBy(0,100)");
-     	         	WebElement n=driver.findElement(By.xpath("//label[@for='directInviteSent']"));
-     	         	 act.moveToElement(ints);
-    				    act.click(n).perform();
-		    Thread.sleep(3000);
+// 		        js.executeScript("window.scrollBy(0,100)");
+// 		        Thread.sleep(2000);
+//      	         	WebElement n=driver.findElement(By.xpath("//label[@for='directInviteSent']"));
+//      	         	 act.moveToElement(ints);
+//     				    act.click(n).perform();
+// 		    Thread.sleep(3000);
 //     	            WebElement o=driver.findElement(By.xpath("(//button[text()='Add slot'])[1]"));
 //     	            js.executeScript("arguments[0].click();",o);
 //     	            js.executeScript("window.scrollBy(0,100)"); 
