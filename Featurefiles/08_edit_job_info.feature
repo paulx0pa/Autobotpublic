@@ -77,7 +77,7 @@ And recruiter can edit minimal Annual Salary "<min sal>"
 And recruiter can edit maximum Annual Salary "<max sal>"
 And recruiter edits prescreening questions
 Then recruiter can edit collaborators
-#And edit prescreening settings
+And edit prescreening settings
 #And edit prescreening shortlist criteria
 #And edit interview setup
 Given close Browser
