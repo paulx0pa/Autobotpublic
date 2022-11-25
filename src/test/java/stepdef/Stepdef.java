@@ -2668,11 +2668,6 @@ public class Stepdef {
          }
          @When("^recruiter clicks on collaborators section of job posted$")
          public void recruiter_clicks_on_collaborators_section_of_job_posted() throws Throwable ,InterruptedException{
-		 Thread.sleep(5000);
-//         	 driver.manage().timeouts().pageLoadTimeout(20,TimeUnit.SECONDS);
-//      		WebDriverWait wait = new WebDriverWait(driver,25);
-// 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Collaborators']"))); 
-// 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);	
 		 	WebElement element=driver.findElement(By.xpath("//a[text()='Collaborators']"));
 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -2695,9 +2690,6 @@ public class Stepdef {
          @When("^recruiter clicks on job approvers section of job posted$")
          public void recruiter_clicks_on_job_approvers_section_of_job_posted() throws Throwable,InterruptedException {
         	 Thread.sleep(3000);
-//        	 WebDriverWait wait = new WebDriverWait(driver, 30);
-// 			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Job Approvers']"))); 
-// 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
         	 driver.findElement(By.xpath("//a[@id='ja']")).click();  
          }
 
