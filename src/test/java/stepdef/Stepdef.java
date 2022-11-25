@@ -448,10 +448,13 @@ public class Stepdef {
 		}
 		@When("^recruiter clicks on select questions button$")
 		public void recruiter_clicks_on_select_questions_button() throws Throwable {
-			WebElement element=driver.findElement(By.xpath("//button[@id='jc-sel-ques-btn']"));
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click();", element);
+			Thread.sleep(3000);
+			((JavascriptExecutor) driver).executeScript("window.scrollTo(document.body.scrollHeight, 0)");
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@id='jc-sel-ques-btn']")).click();
+// 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+// 			JavascriptExecutor js = (JavascriptExecutor) driver;
+// 			js.executeScript("arguments[0].click();", element);
 // 			Thread.sleep(2000);
 // 		   driver.findElement(By.xpath("//button[text()='Select Questions']")).click();
 		}
