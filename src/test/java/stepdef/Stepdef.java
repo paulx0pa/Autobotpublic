@@ -449,7 +449,8 @@ public class Stepdef {
 		@When("^recruiter clicks on select questions button$")
 		public void recruiter_clicks_on_select_questions_button() throws Throwable {
 			Thread.sleep(5000);
-			  new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("jc-sel-ques-btn"))).click();
+			driver.findElement(By.id("jc-sel-ques-btn")).click();
+// 			  new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.id("jc-sel-ques-btn"))).click();
 		}
 		@When("^recruiter clicks on Add Question button$")
 		public void recruiter_clicks_on_Add_Question_button() throws Throwable {
