@@ -448,8 +448,7 @@ public class Stepdef {
 		}
 		@When("^recruiter clicks on select questions button$")
 		public void recruiter_clicks_on_select_questions_button() throws Throwable {
-			Thread.sleep(3000);
-				WebElement element=driver.findElement(By.xpath("//button[text()='Select Questions']"));
+			WebElement element=driver.findElement(By.xpath("//button[@id='jc-sel-ques-btn']"));
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			Actions actions = new Actions(driver);
 			actions.moveToElement(element);
